@@ -1,7 +1,11 @@
 <template>
   <div class="max-w-xl mx-auto text-center mt-10">
     <div v-if="!quizCompleted">
-      <Flashcard :card="currentCard" />
+      <Flashcard :card="currentCard" :key="currentCard.id" />
+
+      <div class="mt-4 text-gray-600">
+        Card {{ currentIndex + 1 }} of {{ flashcards.length }}
+      </div>
 
       <div class="mt-6 flex justify-center gap-4">
         <button
